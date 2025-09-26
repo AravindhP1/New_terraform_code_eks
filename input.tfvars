@@ -1,5 +1,5 @@
 
-  name               = "my-cluster"
+  name               = "my-cluster-1"
   kubernetes_version = "1.33"
   region = "ap-south-1"
 
