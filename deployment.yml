@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: amazon-app
+  labels:
+    app: amazon-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: amazon-app
+  template:
+    metadata:
+      labels:
+        app: amazon-app
+    spec:
+      serviceAccountName: amazon-app-sa   # 👈 IRSA-enabled SA
+      containers:
+      - name: amazon
+        image: aravindh07/amazon:latest
+        ports:
+        - containerPort: 3000
+
